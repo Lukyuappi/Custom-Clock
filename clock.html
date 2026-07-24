@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Clock</title>
+
+  <link rel="stylesheet" href="clock.css">
+  <link rel="manifest" href="manifest.json">
+<script>
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("sw.js");
+  }
+</script>
+
+</head>
+
+<body>
+  <div class="clock-container">
+    <div class="clock-face-base"></div>
+    <div id="clock-face-overlay" class="clock-face-overlay"></div>
+
+    <div id="hour" class="hand hour"></div>
+    <div id="minute" class="hand minute"></div>
+    <div id="second" class="hand second"></div>
+  </div>
+
+  <script src="clock.js"></script>
+</body>
+</html>

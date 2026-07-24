@@ -1,0 +1,115 @@
+:root {
+  --face-color: #ffffff;
+  --hour-color: #ff6b6b;
+  --minute-color: #4ecdc4;
+  --second-color: #ffe66d;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 24px;
+  background-size: cover;
+  background-position: center;
+  font-family: "Yu Gothic", sans-serif;
+  background-size: cover;
+  background-position: center;
+}
+
+/* コントロールパネル */
+.control-panel {
+  background: rgba(255,255,255,0.95);
+  padding: 20px;
+  border-radius: 18px;
+  margin-bottom: 20px;
+}
+
+
+
+/* 文字盤（図形） */
+.clock-face-base {
+  position: absolute;
+  inset: 8%;
+  border-radius: 50%;
+  background: var(--face-color);
+  box-shadow: inset 0 0 0 2px rgba(0,0,0,0.1);
+  z-index: 0;
+}
+
+/* 文字盤画像（背景に影響しない） */
+.clock-face-overlay {
+  position: absolute;
+  inset: 8%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  opacity: 0;
+  transition: opacity .25s;
+  z-index: 1;
+}
+
+/* 針（図形） */
+.hand {
+  position: absolute;
+  left: 50%;
+  bottom: 50%;
+  transform-origin: 50% 100%;
+  border-radius: 6px;
+}
+
+.hour {
+  width: 12px;
+  height: 120px;
+  background: var(--hour-color);
+  z-index: 2;
+}
+
+.minute {
+  width: 8px;
+  height: 160px;
+  background: var(--minute-color);
+  z-index: 3;
+}
+
+.second {
+  width: 4px;
+  height: 180px;
+  background: var(--second-color);
+  z-index: 4;
+}
+
+.preview-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.clock-container {
+  position: relative;
+  width: min(475px, 80vw);
+  aspect-ratio: 1;
+}
+
+.clock-face-base {
+  position: absolute;
+  inset: 8%;
+  border-radius: 50%;
+  background: var(--face-color);
+  box-shadow: inset 0 0 0 2px rgba(0,0,0,0.1);
+  z-index: 0;
+}
+
+.clock-face-overlay {
+  position: absolute;
+  inset: 8%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  opacity: 0;
+  transition: opacity .25s;
+  z-index: 1;
+  border-radius: 50%;
+}

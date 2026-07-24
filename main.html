@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>時計カスタム（設定ページ）</title>
+  <link rel="stylesheet" href="style.css">
+<link rel="manifest" href="manifest.json">
+<script>
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("sw.js");
+  }
+</script>
+</head>
+
+<body>
+  <div class="control-panel">
+    <h1>設定ページ</h1>
+
+    <div class="control-group">
+      <span class="control-title">文字を選ぶ</span>
+      <label><input type="radio" name="clock-face" value="none" checked>なし</label>
+      <label><input type="radio" name="clock-face" value="clock2.png">Clock 2</label>
+      <label><input type="radio" name="clock-face" value="clock3.png">Clock 3</label>
+    </div>
+
+    <div class="control-group color-controls">
+      <label>文字盤<input type="color" id="face-color-picker" value="#ffffff"></label>
+      <label>長針<input type="color" id="hour-color-picker" value="#ff6b6b"></label>
+      <label>短針<input type="color" id="minute-color-picker" value="#4ecdc4"></label>
+      <label>秒針<input type="color" id="second-color-picker" value="#ffe66d"></label>
+    </div>
+
+    <button id="reset-style">デフォルトに戻す</button>
+    <button id="open-clock">時計を開く</button>
+  </div>
+
+  <div class="preview-wrapper">
+  <div class="clock-container">
+    <div class="clock-face-base"></div>
+    <div id="clock-face-overlay" class="clock-face-overlay"></div>
+
+    <div id="hour" class="hand hour"></div>
+    <div id="minute" class="hand minute"></div>
+    <div id="second" class="hand second"></div>
+  </div>
+</div>
+
+
+  <script src="main.js"></script>
+</body>
+</html>
+
